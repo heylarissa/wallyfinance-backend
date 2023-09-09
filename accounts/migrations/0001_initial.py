@@ -12,16 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Transaction',
+            name='BankAccount',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('description', models.CharField(max_length=120)),
-                ('transaction_type', models.CharField(choices=[('1', 'Receita'), ('2', 'Despesa')], max_length=1)),
+                ('account_balance', models.DecimalField(blank=True, decimal_places=2, default=None, max_digits=10, null=True)),
             ],
-            options={
-                'db_table': 'cash_flow',
-            },
         ),
     ]

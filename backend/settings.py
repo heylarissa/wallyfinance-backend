@@ -39,7 +39,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
 ]
 
-AUTH_USER_MODEL = 'user_auth.Users'
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,14 +48,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     'user_auth',
     'accounts',
     'analytics',
     'transactions',
+    
     'rest_framework',
     'djoser',
     'corsheaders',
 ]
+
+AUTH_USER_MODEL = 'user_auth.User'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
